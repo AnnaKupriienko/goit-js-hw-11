@@ -4,18 +4,17 @@ import "izitoast/dist/css/iziToast.min.css";
 const API_KEY = "42651463-7e9bc4d6a898bed570bd4622e";
 const BaseUrl = "https://pixabay.com/api/";
 const loader = document.querySelector('.loader');
-// let query = "";
 
-export function searchImages(query) {
+export function searchImages(searchQuery) {
     const params = new URLSearchParams({
         key: API_KEY,
-        q: query,
+        q: searchQuery,
         image_type: "photo",
         orientation: "horizontal",
         safesearch: true,
     })
     loader.style.display = 'block';
-
+    
     return fetch(`${BaseUrl}?${params}`)
         .then(response => {
         if (!response.ok) {
@@ -39,5 +38,5 @@ export function searchImages(query) {
         }
         return data;
     })
-        .catch(error => { console.log(error) });
+        .catch(error => console.log(error));
 }
