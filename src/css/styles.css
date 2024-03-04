@@ -72,7 +72,7 @@ button{
       margin-right: auto;
        width: 48px;
        height: 48px;
-       display: inline-block;
+       display: none;
        position: relative;
        border: 3px solid;
        border-color: #de3500 #0000 #fff #0000;

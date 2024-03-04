@@ -12,6 +12,8 @@ const lightbox = new SimpleLightbox('.gallery-link', {
     captionsData: 'alt',
     captionDelay: 200,
 });
+
+
 form.addEventListener("submit", onSubmit);
 
 function onSubmit(event) {
