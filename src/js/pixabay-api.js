@@ -14,7 +14,7 @@ export function searchImages(searchQuery) {
         safesearch: true,
     })
     loader.style.display = 'block';
-    
+
     return fetch(`${BaseUrl}?${params}`)
         .then(response => {
         if (!response.ok) {
@@ -26,17 +26,17 @@ export function searchImages(searchQuery) {
             loader.style.display = 'none';
         if (data.hits.length === 0) {
             iziToast.error({
+                title: 'Error',
                 fontSize: 'large',
                 close: false,
                 position: 'topRight',
                 messageColor: 'white',
                 timeout: 2000,
                 backgroundColor: 'red',
-                message:
-                    'Sorry, there are no images matching your search query. Please try again!',
+                message: 'Sorry, there are no images matching your search query. Please try again!',
             });
         }
         return data;
     })
-        .catch(error => console.log(error));
+        .catch(error => console.error(error));
 }

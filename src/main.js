@@ -17,7 +17,7 @@ form.addEventListener("submit", onSubmit);
 function onSubmit(event) {
     event.preventDefault();
     galleryContainer.innerHTML = "";
-    searchQuery =form.elements.searchQuery.value.trim(),
+    searchQuery = form.elements.searchQuery.value.trim(),
      searchImages(searchQuery).then(data => {
         const markup = createMarkup(data)
   galleryContainer.insertAdjacentHTML('beforeend', markup)

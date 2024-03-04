@@ -1,5 +1,3 @@
-
-
 export function createMarkup(data) {
     return data.hits.map(
     element => `<div class="gallery-item">
